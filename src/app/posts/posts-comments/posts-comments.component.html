@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <b>{{postData.title}}</b> <br>
+        <p>
+            {{postData.body}}
+        </p>
+    </div>
+   
+
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of comments">
+        <td>{{post.id}}</td>
+        <td>{{ post.name }}</td>
+        <td>{{ post.email }}</td>
+        <td>{{ (post.body.length>30)? (post.body | slice:0:30)+'...':(post.body) }}</td>
+      </tr>
+    </tbody>
+  </table>
