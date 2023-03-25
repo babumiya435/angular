@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of allPosts">
+        <td>{{post.id}}</td>
+        <td>{{ (post.title.length>30)? (post.title | slice:0:30)+'...':(post.title) }}</td>
+        <td>{{ (post.body.length>30)? (post.body | slice:0:30)+'...':(post.body) }}</td>
+        <td><button id="{{post.id}}" (click) = "navigate(post.id)">Open</button></td>
+      </tr>
+    </tbody>
+  </table>
